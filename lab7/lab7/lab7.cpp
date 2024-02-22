@@ -32,13 +32,12 @@ void sortTradingPoints(TradingPoint* tradingPoints, int numPoints) {
 }
 
 int partition(TradingPoint* arr, int low, int high) {
-    TradingPoint pivot = arr[high]; // pivot
-    int i = (low - 1); // Index of smaller element
+    TradingPoint pivot = arr[high]; 
+    int i = (low - 1); 
 
     for (int j = low; j <= high - 1; j++) {
-        // Compare by area first, then by name if areas are equal
         if (arr[j].area < pivot.area || (arr[j].area == pivot.area && arr[j].name < pivot.name)) {
-            i++; // increment index of smaller element
+            i++; 
             swap(arr[i], arr[j]);
         }
     }
